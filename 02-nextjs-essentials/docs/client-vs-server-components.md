@@ -8,6 +8,7 @@
 - The advantage of this are:
   - There is less JS that needs to be sent to the client.
   - The site has better SEO since HTML content will be provided to the client.
+- Server components can be async while client components cannot be async.
 
 ## Client Components
 

@@ -10,7 +10,13 @@ export default function MealItem({ title, slug, image, summary, creator }) {
         <div className={classes.image}>
           {/* Because the image may not be available at runtime and therefor we 
           don't know the width and height "fill" should be used */}
-          <Image src={image} alt={title} fill />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
