@@ -1,29 +1,8 @@
 import ImagePicker from "@/components/meals/image-picker";
+import { shareMeal } from "@/lib/actions";
 import classes from "./page.module.css";
 
 export default function ShareMealPage() {
-  /**
-   * For server side function handling the "use server" directive must be set.
-   * This allows this function to be set as a prop of the action for the form
-   * below.
-   *
-   * @param {FormData} formData - Data submitted from the form below.
-   */
-  async function shareMeal(formData) {
-    "use server";
-
-    const meal = {
-      title: formData.get("title"),
-      creator_email: formData.get("email"),
-      creator: formData.get("name"),
-      summary: formData.get("summary"),
-      instructions: formData.get("instructions"),
-      image: formData.get("image"),
-    };
-
-    console.log(meal);
-  }
-
   return (
     <>
       <header className={classes.header}>
@@ -33,8 +12,8 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>
-        {/* The server side function defined above is set the action prop
-        here. */}
+        {/* The server side function here and will work even if this component
+        was a client component. */}
         <form className={classes.form} action={shareMeal}>
           <div className={classes.row}>
             <p>
