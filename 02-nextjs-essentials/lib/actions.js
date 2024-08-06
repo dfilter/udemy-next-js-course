@@ -1,5 +1,8 @@
 "use server";
 
+import { redirect } from "next/navigation";
+import { saveMeal } from "./meals";
+
 /**
  * For server side function handling the "use server" directive must be set.
  * This allows this function to be set as a prop of the action for the form.
@@ -19,5 +22,6 @@ export async function shareMeal(formData) {
     image: formData.get("image"),
   };
 
-  console.log(meal);
+  await saveMeal(meal);
+  redirect("/meals");
 }
