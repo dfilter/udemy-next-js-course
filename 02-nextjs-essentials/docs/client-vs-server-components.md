@@ -18,3 +18,10 @@
   is to be used by the client.
 - This kind of component provides client side interactivity such as `onclick`
   events.
+
+### Important Notes about Client Components
+
+- The `"use client"` directive should be used as far down the component tree as
+  possible. This way the server takes care of as much of the rendering as
+  possible. Components down the tree from the component using `"use client"`
+  will be rendered on the client side.
