@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
+import { revalidatePath } from "next/cache";
 
 function isInvalidText(text) {
   return !text || text.trim() === "";
@@ -48,5 +49,10 @@ export async function shareMeal(previousState, formData) {
   }
 
   await saveMeal(meal);
+  /**
+   * The function below tells Next.js to revalidate the cache so the user will
+   * be able to see the meal they just added.
+   */
+  revalidatePath("/meals");
   redirect("/meals");
 }
