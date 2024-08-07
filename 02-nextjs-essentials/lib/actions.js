@@ -14,9 +14,10 @@ function isInvalidText(text) {
  * component. It is possible to import a server action such as this in a client
  * form.
  *
+ * @param {object} previousState - previous state from useActionState hook.
  * @param {FormData} formData - Data submitted from the form below.
  */
-export async function shareMeal(formData) {
+export async function shareMeal(previousState, formData) {
   const meal = {
     title: formData.get("title"),
     creator_email: formData.get("email"),
@@ -36,7 +37,14 @@ export async function shareMeal(formData) {
     !meal.image ||
     meal.image.size === 0
   ) {
-    throw new Error("Invalid input.");
+    /**
+     * Action responses must return serializable data meaning data that does
+     * not include methods ie: strings, numbers, arrays, objects without
+     * methods.
+     */
+    return {
+      message: "Invalid input.",
+    };
   }
 
   await saveMeal(meal);
