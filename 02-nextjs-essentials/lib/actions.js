@@ -3,6 +3,10 @@
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
 
+function isInvalidText(text) {
+  return !text || text.trim() === "";
+}
+
 /**
  * For server side function handling the "use server" directive must be set.
  * This allows this function to be set as a prop of the action for the form.
@@ -21,6 +25,19 @@ export async function shareMeal(formData) {
     instructions: formData.get("instructions"),
     image: formData.get("image"),
   };
+
+  if (
+    isInvalidText(meal.title) ||
+    isInvalidText(meal.summary) ||
+    isInvalidText(meal.instructions) ||
+    isInvalidText(meal.creator) ||
+    isInvalidText(meal.creator_email) ||
+    !meal.creator_email.includes("@") ||
+    !meal.image ||
+    meal.image.size === 0
+  ) {
+    throw new Error("Invalid input.");
+  }
 
   await saveMeal(meal);
   redirect("/meals");
