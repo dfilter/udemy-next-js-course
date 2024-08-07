@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { DUMMY_NEWS } from "@/dummy-news";
+import ModalBackground from "@/components/modal-background";
 
 /**
  * All children of a dynamic route also receive the parent's url params.
@@ -22,7 +23,7 @@ export default function InterceptedImagePage({ params }) {
 
   return (
     <>
-      <div className="modal-backdrop" />
+      <ModalBackground />
       <dialog className="modal" open>
         <div className="fullscreen-image">
           <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
