@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
-import { DUMMY_NEWS } from "@/dummy-news";
 import ModalBackground from "@/components/modal-background";
+import { getAllNews } from "@/lib/news";
 
 /**
  * All children of a dynamic route also receive the parent's url params.
@@ -13,7 +13,7 @@ import ModalBackground from "@/components/modal-background";
  */
 export default function InterceptedImagePage({ params }) {
   const newsItemSlug = params.slug;
-  const newsItem = DUMMY_NEWS.find(
+  const newsItem = getAllNews().find(
     (newsItem) => newsItem.slug === newsItemSlug
   );
 

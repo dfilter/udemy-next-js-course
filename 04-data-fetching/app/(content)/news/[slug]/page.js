@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 
-import { DUMMY_NEWS } from "@/dummy-news";
 import Link from "next/link";
+import { getAllNews } from "@/lib/news";
 
 export default function NewsPage({ params }) {
   const newsSlug = params.slug;
-  const newsItem = DUMMY_NEWS.find((item) => item.slug === newsSlug);
+  const newsItem = getAllNews().find((item) => item.slug === newsSlug);
 
   if (!newsItem) {
     // Manually trigger 404 in order to display not-found.js

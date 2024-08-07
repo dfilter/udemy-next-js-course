@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { DUMMY_NEWS } from "@/dummy-news";
+import { getAllNews } from "@/lib/news";
 
 /**
  * All children of a dynamic route also receive the parent's url params.
@@ -12,7 +12,7 @@ import { DUMMY_NEWS } from "@/dummy-news";
  */
 export default function ImagePage({ params }) {
   const newsItemSlug = params.slug;
-  const newsItem = DUMMY_NEWS.find(
+  const newsItem = getAllNews().find(
     (newsItem) => newsItem.slug === newsItemSlug
   );
 
