@@ -33,3 +33,5 @@
 ### [Section 4: Data Fetching](./04-data-fetching/)
 
 ### [Section 5: Data Mutation](./05-data-mutation/)
+
+- [revalidatePath](https://nextjs.org/docs/app/api-reference/functions/revalidatePath)

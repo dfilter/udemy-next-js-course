@@ -1,8 +1,10 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 import { uploadImage } from "@/lib/cloudinary";
 import { storePost, updatePostLikeStatus } from "@/lib/posts";
-import { redirect } from "next/navigation";
 
 /**
  * Form actions must have "use server" directive set. They must also be async.
@@ -55,5 +57,9 @@ export async function createPost(previousState, formData) {
 }
 
 export async function togglePostLikeStatus(postId) {
-  updatePostLikeStatus(postId, 2);
+  await updatePostLikeStatus(postId, 2);
+  /**
+   * @see https://nextjs.org/docs/app/api-reference/functions/revalidatePath
+   */
+  revalidatePath("/", "layout");
 }
