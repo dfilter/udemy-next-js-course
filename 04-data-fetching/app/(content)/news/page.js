@@ -1,8 +1,8 @@
 import NewsList from "@/components/news-list";
-import { getAllNews } from "@/lib/news";
+import { getAllNews, getAllNewsAsync } from "@/lib/news";
 
-export default function NewsPages() {
-  const news = getAllNews();
+export default async function NewsPages() {
+  const news = await getAllNewsAsync();
 
   return (
     <main>

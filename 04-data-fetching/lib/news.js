@@ -6,6 +6,12 @@ export function getAllNews() {
   return db.prepare("SELECT * FROM news").all();
 }
 
+export async function getAllNewsAsync() {
+  const news = getAllNews();
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return news;
+}
+
 export function getLatestNews() {
   return getAllNews().slice(0, 3);
 }
