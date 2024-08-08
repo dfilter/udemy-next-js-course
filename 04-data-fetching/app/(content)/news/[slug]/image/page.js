@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getAllNews } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 
 /**
  * All children of a dynamic route also receive the parent's url params.
@@ -10,11 +10,9 @@ import { getAllNews } from "@/lib/news";
  * @property {string} props.params.slug - Url slug.
  * @returns
  */
-export default function ImagePage({ params }) {
+export default async function ImagePage({ params }) {
   const newsItemSlug = params.slug;
-  const newsItem = getAllNews().find(
-    (newsItem) => newsItem.slug === newsItemSlug
-  );
+  const newsItem = await getNewsItem(newsItemSlug);
 
   if (!newsItem) {
     notFound();

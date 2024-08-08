@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 
 import Link from "next/link";
-import { getAllNews } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 
-export default function NewsPage({ params }) {
+export default async function NewsPage({ params }) {
   const newsSlug = params.slug;
-  const newsItem = getAllNews().find((item) => item.slug === newsSlug);
+  const newsItem = await getNewsItem(newsSlug);
 
   if (!newsItem) {
     // Manually trigger 404 in order to display not-found.js

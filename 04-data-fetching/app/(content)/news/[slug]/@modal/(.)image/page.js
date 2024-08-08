@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import ModalBackground from "@/components/modal-background";
-import { getAllNews } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 
 /**
  * All children of a dynamic route also receive the parent's url params.
@@ -11,11 +11,9 @@ import { getAllNews } from "@/lib/news";
  * @property {string} props.params.slug - Url slug.
  * @returns
  */
-export default function InterceptedImagePage({ params }) {
+export default async function InterceptedImagePage({ params }) {
   const newsItemSlug = params.slug;
-  const newsItem = getAllNews().find(
-    (newsItem) => newsItem.slug === newsItemSlug
-  );
+  const newsItem = await getNewsItem(newsItemSlug);
 
   if (!newsItem) {
     notFound();
