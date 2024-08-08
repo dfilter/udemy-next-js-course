@@ -36,3 +36,7 @@
 
 - [revalidatePath](https://nextjs.org/docs/app/api-reference/functions/revalidatePath)
 - [useOptimistic](https://react.dev/reference/react/useOptimistic)
+
+### [Section 6: Caching](https://nextjs.org/docs/app/building-your-application/caching)
+
+- [Caching notes](./06-caching/notes/caching.md)
