@@ -53,3 +53,6 @@
   reuses expensive operations.
 
 ### [Section 7: Optimizations](./07-optimizations/)
+
+- [Image Component](https://nextjs.org/docs/app/api-reference/components/image)
+  optimizes images for site.
