@@ -56,3 +56,5 @@
 
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image)
   optimizes images for site.
+- [Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+  search engine optimization etc.
