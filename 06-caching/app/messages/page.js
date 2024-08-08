@@ -7,7 +7,7 @@ import Messages from "@/components/messages";
 
 // default is 'auto' 'force-dynamic' will disable caching for this component.
 // next recommends using unstable_noStore instead of dynamic export.
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function MessagesPage() {
   /**
@@ -18,7 +18,11 @@ export default async function MessagesPage() {
   /**
    * @see https://nextjs.org/docs/app/api-reference/functions/fetch
    */
-  const response = await fetch("http://localhost:8080/messages");
+  const response = await fetch("http://localhost:8080/messages", {
+    next: {
+      tags: ["msg"],
+    },
+  });
   const messages = await response.json();
 
   if (!messages || messages.length === 0) {

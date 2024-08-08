@@ -42,3 +42,4 @@
 - [Caching notes](./06-caching/notes/caching.md)
 - [fetch](https://nextjs.org/docs/app/api-reference/functions/fetch)
 - [unstable_noStore](https://nextjs.org/docs/app/api-reference/functions/unstable_noStore)
+- [revalidateTag](https://nextjs.org/docs/app/api-reference/functions/revalidateTag)
