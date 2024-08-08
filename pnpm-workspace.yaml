@@ -1,0 +1,6 @@
+packages:
+  - "01-getting-started/**"
+  - "02-nextjs-essentials/**"
+  - "03-routing-rendering/**"
+  - "04-data-fetching/**"
+  - "05-data-mutation/**"
