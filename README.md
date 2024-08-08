@@ -1,4 +1,4 @@
-# Next.js Udemy Course
+# [Next.js Udemy Course](https://www.udemy.com/course/nextjs-react-the-complete-guide/)
 
 ## Setup
 
