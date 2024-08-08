@@ -1,4 +1,4 @@
-import { unstable_noStore } from "next/cache";
+// import { unstable_noStore } from "next/cache";
 
 import Messages from "@/components/messages";
 
@@ -7,7 +7,7 @@ import Messages from "@/components/messages";
 
 // default is 'auto' 'force-dynamic' will disable caching for this component.
 // next recommends using unstable_noStore instead of dynamic export.
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function MessagesPage() {
   /**
