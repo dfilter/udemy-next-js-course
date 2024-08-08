@@ -1,6 +1,7 @@
 // import { unstable_noStore } from "next/cache";
 
 import Messages from "@/components/messages";
+import { getMessages } from "@/lib/messages";
 
 // configures requests to this route/component be cached for 5 seconds.
 // export const revalidate = 5;
@@ -9,7 +10,7 @@ import Messages from "@/components/messages";
 // next recommends using unstable_noStore instead of dynamic export.
 // export const dynamic = "force-dynamic";
 
-export default async function MessagesPage() {
+export default function MessagesPage() {
   /**
    * Disables cache for only the component in which it is called.
    * @see https://nextjs.org/docs/app/api-reference/functions/unstable_noStore
@@ -18,12 +19,13 @@ export default async function MessagesPage() {
   /**
    * @see https://nextjs.org/docs/app/api-reference/functions/fetch
    */
-  const response = await fetch("http://localhost:8080/messages", {
-    next: {
-      tags: ["msg"],
-    },
-  });
-  const messages = await response.json();
+  // const response = await fetch("http://localhost:8080/messages", {
+  //   next: {
+  //     tags: ["msg"],
+  //   },
+  // });
+
+  const messages = getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;

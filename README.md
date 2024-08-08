@@ -41,5 +41,11 @@
 
 - [Caching notes](./06-caching/notes/caching.md)
 - [fetch](https://nextjs.org/docs/app/api-reference/functions/fetch)
+  custom Next.js version of fetch.
 - [unstable_noStore](https://nextjs.org/docs/app/api-reference/functions/unstable_noStore)
+  sets the component it is called within to not be cached.
 - [revalidateTag](https://nextjs.org/docs/app/api-reference/functions/revalidateTag)
+  revalidates all the components/fetch calls that have the specified tag
+  attached.
+- [cache](https://react.dev/reference/react/cache) prevents request duplication
+  within a single request cycle (client loading a page).
