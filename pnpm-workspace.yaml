@@ -6,3 +6,4 @@ packages:
   - "05-data-mutation/**"
   - "06-caching/**"
   - "07-optimizations/**"
+  - "08-authentication/**"

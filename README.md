@@ -60,3 +60,5 @@
   search engine optimization etc.
   - [Dynamic Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-metadata)
     metadata that is generated dynamically.
+
+### [Section 8: Authentication](./08-authentication/)
