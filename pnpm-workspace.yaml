@@ -4,3 +4,4 @@ packages:
   - "03-routing-rendering/**"
   - "04-data-fetching/**"
   - "05-data-mutation/**"
+  - "06-caching/**"
