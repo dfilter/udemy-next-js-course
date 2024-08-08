@@ -53,6 +53,7 @@ export async function createPost(previousState, formData) {
     userId: 1,
   });
 
+  revalidatePath("/feed");
   redirect("/feed");
 }
 
@@ -61,5 +62,5 @@ export async function togglePostLikeStatus(postId) {
   /**
    * @see https://nextjs.org/docs/app/api-reference/functions/revalidatePath
    */
-  revalidatePath("/", "layout");
+  revalidatePath("/feed");
 }
