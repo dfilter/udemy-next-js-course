@@ -37,7 +37,7 @@
 - [revalidatePath](https://nextjs.org/docs/app/api-reference/functions/revalidatePath)
 - [useOptimistic](https://react.dev/reference/react/useOptimistic)
 
-### [Section 6: Caching](https://nextjs.org/docs/app/building-your-application/caching)
+### [Section 6: Caching](./06-caching/)
 
 - [Caching notes](./06-caching/notes/caching.md)
 - [fetch](https://nextjs.org/docs/app/api-reference/functions/fetch)
@@ -51,3 +51,5 @@
   within a single request cycle (client loading a page).
 - [unstable_cache](https://nextjs.org/docs/app/api-reference/functions/unstable_cache)
   reuses expensive operations.
+
+### [Section 7: Optimizations](./07-optimizations/)

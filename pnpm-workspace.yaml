@@ -5,3 +5,4 @@ packages:
   - "04-data-fetching/**"
   - "05-data-mutation/**"
   - "06-caching/**"
+  - "07-optimizations/**"
