@@ -35,3 +35,4 @@
 ### [Section 5: Data Mutation](./05-data-mutation/)
 
 - [revalidatePath](https://nextjs.org/docs/app/api-reference/functions/revalidatePath)
+- [useOptimistic](https://react.dev/reference/react/useOptimistic)
