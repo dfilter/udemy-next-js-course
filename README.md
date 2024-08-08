@@ -49,3 +49,5 @@
   attached.
 - [cache](https://react.dev/reference/react/cache) prevents request duplication
   within a single request cycle (client loading a page).
+- [unstable_cache](https://nextjs.org/docs/app/api-reference/functions/unstable_cache)
+  reuses expensive operations.

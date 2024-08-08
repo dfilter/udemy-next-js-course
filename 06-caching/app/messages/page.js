@@ -10,7 +10,7 @@ import { getMessages } from "@/lib/messages";
 // next recommends using unstable_noStore instead of dynamic export.
 // export const dynamic = "force-dynamic";
 
-export default function MessagesPage() {
+export default async function MessagesPage() {
   /**
    * Disables cache for only the component in which it is called.
    * @see https://nextjs.org/docs/app/api-reference/functions/unstable_noStore
@@ -25,7 +25,7 @@ export default function MessagesPage() {
   //   },
   // });
 
-  const messages = getMessages();
+  const messages = await getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;

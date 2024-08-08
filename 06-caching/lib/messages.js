@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { unstable_cache } from "next/cache";
 
 import sql from "better-sqlite3";
 
@@ -19,9 +20,13 @@ export function addMessage(message) {
 }
 
 /**
- * @see https://react.dev/reference/react/cache
+ * @see https://nextjs.org/docs/app/api-reference/functions/unstable_cache
  */
-export const getMessages = cache(function getMessages() {
-  console.log("Fetching messages from db");
-  return db.prepare("SELECT * FROM messages").all();
-});
+export const getMessages = unstable_cache(
+  cache(function getMessages() {
+    console.log("Fetching messages from db");
+    return db.prepare("SELECT * FROM messages").all();
+  }),
+  ["messages"],
+  { tags: ["msg"] }
+);

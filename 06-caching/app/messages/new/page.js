@@ -13,7 +13,7 @@ export default function NewMessagePage() {
     /**
      * @see https://nextjs.org/docs/app/api-reference/functions/revalidateTag
      */
-    // revalidateTag("msg");
+    revalidateTag("msg");
     redirect("/messages");
   }
 
