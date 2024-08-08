@@ -40,3 +40,4 @@
 ### [Section 6: Caching](https://nextjs.org/docs/app/building-your-application/caching)
 
 - [Caching notes](./06-caching/notes/caching.md)
+- [fetch](https://nextjs.org/docs/app/api-reference/functions/fetch)
