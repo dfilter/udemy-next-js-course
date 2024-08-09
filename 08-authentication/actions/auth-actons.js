@@ -1,5 +1,6 @@
 "use server";
 
+import { hashUserPassword } from "@/lib/hash";
 import { createUser } from "@/lib/user";
 
 /**
@@ -26,5 +27,6 @@ export async function signup(previousState, formDate) {
     };
   }
 
-  createUser(email, password);
+  const hashedPassword = hashUserPassword(password);
+  createUser(email, hashedPassword);
 }
