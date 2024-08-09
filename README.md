@@ -8,6 +8,8 @@
 
 ## Notes
 
+[Course Slides](./slides.pdf)
+
 ### [Section 1: Getting started](./01-getting-started/)
 
 - [Reserved Filenames](./01-getting-started/notes/reserved-filenames.md)
