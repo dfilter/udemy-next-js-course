@@ -3,7 +3,7 @@
 import { useFormState } from "react-dom";
 import Link from "next/link";
 
-import { signup } from "@/actions/auth-actons";
+import { signup } from "@/actions/auth-actions";
 
 export default function AuthForm() {
   const [formState, formAction] = useFormState(signup, {});
@@ -20,10 +20,10 @@ export default function AuthForm() {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password" />
       </p>
-      {formState?.errors && (
+      {formState.errors && (
         <ul id="form-errors">
           {Object.keys(formState.errors).map((error) => (
-            <li key={error}>{formState.error[error]}</li>
+            <li key={error}>{formState.errors[error]}</li>
           ))}
         </ul>
       )}
