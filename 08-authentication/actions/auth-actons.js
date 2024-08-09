@@ -1,5 +1,7 @@
 "use server";
 
+import { createUser } from "@/lib/user";
+
 /**
  * @param {FormData} previousState - Form data before form submitted.
  * @param {FormData} formDate - Data submitted from the sign up form.
@@ -23,5 +25,6 @@ export async function signup(previousState, formDate) {
       errors,
     };
   }
-  // store in db
+
+  createUser(email, password);
 }
