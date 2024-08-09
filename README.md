@@ -69,3 +69,7 @@
   apps.
 - [cookies](https://nextjs.org/docs/app/api-reference/functions/cookies)
   function for handling cookies in a Next.js app.
+
+## Certificate
+
+![Certificate](./certificate.webp)
