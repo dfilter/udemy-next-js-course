@@ -65,4 +65,7 @@
 
 ### [Section 8: Authentication](./08-authentication/)
 
-- [Lucia Auth](https://lucia-auth.com/)
+- [Lucia Auth](https://lucia-auth.com/) simple authentication library for node
+  apps.
+- [cookies](https://nextjs.org/docs/app/api-reference/functions/cookies)
+  function for handling cookies in a Next.js app.
