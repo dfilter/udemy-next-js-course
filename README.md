@@ -64,3 +64,5 @@
     metadata that is generated dynamically.
 
 ### [Section 8: Authentication](./08-authentication/)
+
+- [Lucia Auth](https://lucia-auth.com/)
